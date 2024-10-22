@@ -1,0 +1,217 @@
+:root {
+    --color-pri: #e50914;
+    --color-sec: #ffffff;
+    --color-pri-dark: #c11119;
+    --color-dark-op: #000000aa;
+    --color-dark: #000000;
+    --color-cardbg: #000000e6;
+    --color-dropbg: #00000025;
+ }
+ 
+ body {
+    position: relative;
+    min-height: 100vh;
+ }
+ 
+ body::after {
+    content: "";
+    min-height: 100vh;
+    background-image: linear-gradient(
+          to top,
+          var(--color-dark-op) 0%,
+          var(--color-dark-op) 60%,
+          var(--color-dark) 100%
+       ),
+       url(../img/rDJegQJaCyGaYysj2g5XWY-320-80.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(2px);
+ }
+ 
+ .logo {
+    width: 100px;
+    display: block;
+ }
+ 
+ button.btn.btn-sm.ntflx-btn-pri {
+    background-color: var(--color-pri);
+    color: var(--color-sec);
+    font-weight: bold;
+    transition: all 0.4s ease-in-out;
+ }
+ 
+ /* button.btn.btn-sm.ntflx-btn-pri:hover,
+ button.btn.btn-sm.ntflx-btn-pri:active,
+ button.btn.btn-sm.ntflx-btn-pri:focus {
+    background-color: var(--color-pri-dark);
+ } */
+ 
+ .backDrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-dropbg);
+    transition: all 0.4s ease-in-out;
+    display: none;
+    cursor: pointer;
+ }
+ 
+ .backDrop.active {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+ }
+ 
+ .moviemodel {
+    position: fixed;
+    left: 20%;
+    width: 60%;
+    top: 20%;
+    display: none;
+
+    transition: all 0.4s ease-in-out;
+ }
+ 
+ .moviemodel.active {
+    display: block;
+
+    animation: slideDown 0.4s ease-in-out;
+ }
+ 
+ .moviemodel .card-header i {
+    float: right;
+    line-height: 39px;
+    cursor: pointer;
+ }
+ 
+ .card_bg {
+    background-color: var(--color-cardbg);
+    color: var(--color-sec);
+ }
+ 
+ .movbg {
+    background: transparent;
+    border: 1px solid var(--color-pri);
+    color: var(--color-sec);
+ }
+ 
+ .cardbg {
+    background: transparent;
+    background-color: var(--color-dark-op);
+    color: var(--color-sec);
+ }
+ 
+ .edit-bg {
+    background-color: var(--color-dark-op);
+    border: 1px solid var(--color-pri);
+    color: var(--color-pri);
+    font-weight: bold;
+ }
+ 
+ .close-bg {
+    background-color: var(--color-pri);
+    border: 1px solid var(--color-pri);
+    color: var(--color-sec);
+    font-weight: bold;
+ }
+ 
+ .edit-bg:hover,
+ .edit-bg:active,
+ .edit-bg:focus,
+ .close-bg:hover,
+ .close-bg:active,
+ .close-bg:focus {
+    color: var(--color-sec);
+    background-color: var(--color-pri-dark);
+    transition: all 0.4s ease-in-out;
+ }
+ 
+ @keyframes fadeIn {
+    from {
+       opacity: 0;
+    }
+    to {
+       opacity: 1;
+    }
+ }
+ 
+ @keyframes slideDown {
+    from {
+       transform: translateY(-30px);
+    }
+    to {
+       transform: translateY(0px);
+    }
+ }
+ 
+ /* movie card css */
+ .movieCard {
+    height: 550px;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+ }
+ .movieCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+ 
+ .movieTitle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: var(--color-sec);
+    background-color: var(--color-dark-op);
+    width: 100%;
+    padding: 15px;
+ }
+ .movieTitle h3 {
+    height: 34px;
+    overflow: hidden;
+ }
+ .rating {
+    position: relative;
+ }
+ .rating span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1px 5px;
+ }
+ 
+ .movieOverview {
+    position: absolute;
+    top: 125%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-dark-op);
+    height: 65%;
+    padding: 20px;
+    transition: all 0.4s ease-in-out;
+    overflow-y: auto;
+ }
+ 
+ .movieCard:hover .movieOverview {
+    top: 35%;
+ }
+ 
+ /* movie card css end */
+ 
+ @media all and (max-width: 600px) {
+    .moviemodel {
+       left: 2%;
+       width: 100%;
+       top: 12%;
+    }
+ }

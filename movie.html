@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+    crossorigin="anonymous"
+ />
+ <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+ />
+ <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.min.css"
+ />
+ <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+
+    <header class="header py-5 mb-5">
+        <div class="container">
+           <div class="row">
+              <div class="col-6">
+                 <a href="index.html" class="logo">
+                    <img src="./assets/img/Logonetflix.webp" alt="logo" title="logo" width="100px" height="30px" />
+                 </a>
+              </div>
+              <div class="col-6 text-right">
+                 <button class="btn btn-sm ntflx-btn-pri" id="showMovieBtn">
+                    Add Movie
+                 </button>
+              </div>
+           </div>
+        </div>
+     </header>
+
+     <div class="container-fluid">
+        <div class="row" id="movieContainer"></div>
+     </div>
+
+     <div class="backDrop closeToggle" id="backDrop"></div>
+     <div class="moviemodel" id="moviemodel">
+        <form id="movieForm">
+           <div class="card card_bg">
+              <div class="card-header">
+                 <h2>
+                    Add Movie Details
+                    <i class="fa-solid fa-xmark closeToggle"></i>
+                 </h2>
+              </div>
+              <div class="card-body">
+                 <div class="form-group">
+                    <label for="movieTitle">Movie Name</label>
+                    <input
+                       type="text"
+                       class="form-control movbg"
+                       id="movieTitle"
+                    />
+                 </div>
+
+                 <div class="form-group">
+                    <label for="movieURL">Movie URL</label>
+                    <input
+                       type="text"
+                       class="form-control movbg"
+                       id="movieURL"
+                    />
+                 </div>
+
+                 <div class="form-group">
+                    <label for="overview">Overview</label>
+                    <textarea
+                       id="overview"
+                       class="form-control movbg"
+                       rows="3"
+                    ></textarea>
+                 </div>
+                 <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <select id="rating" class="form-control movbg">
+                       <option value="1">1</option>
+                       <option value="2">2</option>
+                       <option value="3">3</option>
+                       <option value="4">4</option>
+                       <option value="5">5</option>
+                    </select>
+                 </div>
+              </div>
+
+              <div class="card-footer text-right">
+                 <button class="btn edit-bg" type="submit" id="sumbitbtn">
+                    Add Movie
+                 </button>
+                 <button
+                    class="btn edit-bg d-none"
+                    type="button"
+                    id="updateBtn"
+                 >
+                    Update Movie
+                 </button>
+                 <button class="btn closeToggle close-bg" type="button">
+                    Close
+                 </button>
+              </div>
+           </div>
+        </form>
+     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.all.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
